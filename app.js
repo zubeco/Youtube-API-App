@@ -11,6 +11,8 @@ $(document).ready(function(){
         playlistId: playlistId
     }
     loadVids();
+
+
     function loadVids(){
         $.getJSON(URL, options, function(data){
             var id = data.items[0].snippet.resourceId.videoId;
@@ -21,7 +23,7 @@ $(document).ready(function(){
 
     function mainVid(id) {
         $('#video').html(`
-            <iframe width="560" height="315" 
+            <iframe width="100%" height="315" 
             src="https://www.youtube.com/embed/${id}"
             frameborder="0" allow="accelerometer; autoplay; 
             clipboard-write; encrypted-media; gyroscope;
